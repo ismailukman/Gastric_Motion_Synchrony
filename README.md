@@ -21,6 +21,7 @@ This project quantifies phase synchronization between the gastric slow-wave rhyt
   - Translations: X (left-right), Y (anterior-posterior), Z (superior-inferior)
   - Rotations: X (pitch), Y (roll), Z (yaw)
 
+
 ---
 
 ## Analysis Pipeline
@@ -54,33 +55,6 @@ Emphasizes high-amplitude coupling periods (range: 0-1)
 
 ---
 
-## Key Results
-
-### Population-Level Significance (FDR-corrected, q<0.05)
-
-| Motion Parameter | PLV | awPLV | Effect Size (PLV) | Effect Size (awPLV) |
-|------------------|-----|-------|-------------------|---------------------|
-| **Translation Y** (Ant-Post) | ✓ *** | ✓ *** | 0.042 | 0.059 |
-| **Translation X** (Left-Right) | ✓ * | ✓ ** | 0.021 | 0.044 |
-| **Rotation X** (Pitch) | ✓ ** | ✓ ** | 0.030 | 0.049 |
-| **Rotation Y** (Roll) | ✓ ** | ✓ * | 0.033 | 0.043 |
-| **Rotation Z** (Yaw) | ✗ | ✓ * | 0.020 | 0.045 |
-| **Translation Z** (Sup-Inf) | ✗ | ✗ | -0.007 | 0.007 |
-
-**Significance levels**: * q<0.05, ** q<0.01, *** q<0.001
-
-### Individual-Level Significance
-- **PLV**: 22/504 tests (4.4%) FDR-significant
-- **awPLV**: 30/504 tests (6.0%) FDR-significant
-
-### Interpretation
-- **Strongest coupling**: Anterior-posterior translation (Translation Y)
-- **Robust coupling**: Lateral translation, pitch, and roll
-- **No coupling**: Superior-inferior translation
-- **awPLV advantage**: Larger effect sizes, suggesting coupling is prominent during high-amplitude gastric oscillations
-
----
-
 ## Repository Structure
 
 ```
@@ -90,20 +64,16 @@ main_project_path/
 │   │   ├── egg_confounds_synchrony_v5.py    # Main analysis script (PLV + awPLV)
 │   │   ├── signal_slicing.py                # Signal preprocessing utilities
 │   │   └── voxel_based_analysis.py          # Voxel-wise brain analysis
-│   ├── analysis_pipeline_flowchart.txt      # Detailed pipeline documentation
-│   ├──    # Simplified pipeline overview
 │   └── dataframes/
 │       ├── plvs_egg_w_motion_v5.csv         # Individual-level results (504 rows)
 │       ├── population_level_v5.csv          # Population-level results (12 rows)
 │       └── egg_brain_meta_data.csv          # Subject metadata
 ├── plots/
-│   ├── plv_awplv_densities_v5.png       # Main results figure (3×2 grid)
-│   ├── gastric_rhythm_subject_*.png         # Individual subject gastric plots
+│   ├── plv_awplv_densities_v5.png           # Population level results figure (3×2 grid)
 ├── derivatives/brain_gast/                  # Preprocessed EGG data
 ├── BIDS_data/sub_motion_files/              # Motion parameter files
-├── config.py                                 # Configuration parameters
-├── experiment_methods_results.txt            # Detailed methods & results text
-└── README.md                                 # This file
+├── config.py                                # Configuration parameters
+└── README.md                                # This file
 ```
 
 ---
@@ -207,14 +177,13 @@ Edit `config.py` to modify analysis parameters:
 ## Changelog
 
 ### Version 5 (Current)
-- ✓ Added amplitude-weighted PLV (awPLV) analysis
-- ✓ Implemented mismatch null distribution approach
-- ✓ Separate FDR corrections for PLV and awPLV
-- ✓ Enhanced visualization with significance markers
-- ✓ Doubled font sizes for publication quality
-- ✓ Created comprehensive documentation and pipeline flowcharts
-- ✓ Added subject-specific visualization scripts
-- ✓ Enhanced methods schematic figure (v2)
+- Added amplitude-weighted PLV (awPLV) analysis
+- Implemented mismatch null distribution approach
+- Enhanced visualization with significance markers
+- Doubled font sizes for publication quality
+- Created comprehensive documentation and pipeline flowcharts
+- Added subject-specific visualization scripts
+- Enhanced methods schematic figure (v2)
 
 ### Version 4
 - Circular permutation null distribution
