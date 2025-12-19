@@ -1,7 +1,9 @@
 # Gastric-Brain-Motion Synchrony Analysis
 
 ```Investigating the coupling between gastric electrical rhythm and head motion during resting-state fMRI.
-Based on analysis provided by Levakov https://github.com/GidLev/brain_gastric_synchronization_2023/tree/master ```
+Based on analysis provided by Levakov https://github.com/GidLev/brain_gastric_synchronization_2023/tree/master.
+```
+
 ---
 
 ## Overview
